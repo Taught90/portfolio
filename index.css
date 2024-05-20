@@ -768,6 +768,520 @@ button.btn:hover{
 }
 
 
+@media (max-width:600px) {
+    body{
+        overflow: visible;
+    }
+
+    section .intro{
+        min-height: 90vh;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        padding: 10px;
+    }
+    .intro .cover{
+        width: 220px;
+        height: 220px;
+        border-radius: 50%;
+        overflow: hidden;
+        animation: img 2s forwards;
+    }
+    .intro img{
+        margin-left: -90px;
+        margin-top: -90px;
+        scale:1.5;
+    }
+
+    .intro .info h1{
+        font-size: 60px;
+        animation: h1 2s forwards;
+    }
+    @keyframes h1 {
+        0%{
+            transform: translateY(80px);
+        }
+    }
+    .intro .info .li{
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        background: goldenrod;
+        height: 50px;
+        width: 250px;
+        overflow: hidden;
+        animation: li 2s forwards;
+    }
+    @keyframes li {
+        0%{
+            transform: translateY(120px);
+        }
+    }
+    .intro .info .li span{
+        font-size: 40px;
+        animation: autoscroll 4s  infinite;
+        animation-delay: 5s;
+    }
+    @keyframes autoscroll {
+        0%{
+            transform: translateY(0);  
+        }    
+        50%{
+            transform: translateY(-50px);
+        }    
+        100%{
+            transform: translateY(-94px);
+        }    
+        
+    }
+
+
+    section .about .desc{
+        padding: 10px;
+        min-height: 100vh;
+    }
+    section .about .desc p{
+        font-size: 14px;
+        margin-bottom: 30px;
+    }
+    section .about .desc p span{
+        color: goldenrod;
+    }
+    section .about .desc ul li{
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+    section .about .desc h4{
+        color: goldenrod;
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    section .about .desc h3{
+        color: goldenrod;
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+
+    section .projects{
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        min-height: 50vh;
+        overflow: hidden;
+    }
+    section .projects .card{
+        display: flex;
+        flex-direction: column;
+        width: 200px;
+        border-radius: 20px 20px 0 0;
+        border-radius: 20px 20px 0 0;
+        animation: card 20s  infinite;
+    }
+    section .projects .card img{
+        width: 200px;
+        height: 220px;
+        border-radius: 20px 20px 0 0;
+        opacity: 25;
+        transition: all .3s;
+    }
+    section .projects:hover .card{
+        animation-play-state: paused;
+    }
+    section .projects .card img{
+        border-radius: 20px 20px 0 0;
+        opacity: .5;
+        transition: all .3s linear;
+    }
+    section .projects .card:hover img{
+        margin-bottom: 10px;
+        cursor: pointer;
+        opacity: 1;
+    }
+    section .projects .card .desc{
+        display: flex;
+        flex-direction: column;
+        z-index: 2;
+        padding:0 0 10px 0px;
+        background: #2d2d2d;
+    }
+    section .projects .card .desc h1{
+        color: goldenrod;
+    }
+    section .projects .card .desc button{
+        position: relative;
+        align-self: center;
+        width: 180px;
+        margin-top: 10px;
+        border-radius: 5px;
+        overflow: hidden;
+        cursor: pointer;
+    }
+    section .projects .card .desc button::before{
+        position: absolute;
+        content: " ";
+        left: -100%;
+        width: 180px;
+        height: 60px;
+        transform: skewX(45deg);
+        background: linear-gradient(-90deg, pink 50% ,cyan);
+    }
+    section .projects .card .desc button:hover::before{
+        animation: glow 2s ease-out forwards;
+    }
+    @keyframes glow {
+        100%{
+            transform: translate(200%);
+        }
+    }
+    section .projects .card .desc button a{
+        text-decoration: none;
+        color: #000;
+        font-size: 24px;
+        z-index: 2;
+    }
+    
+    @keyframes card {
+        0%{
+            transform: translate(0%);
+        }
+        25%{
+            transform: translate(-128%);
+        }
+        50%{
+            transform: translate(-258%);
+        }
+        75%{
+
+            transform: translate(-388%);
+        }
+        100%{
+            transform: translate(-520%);
+        }
+    
+    }
+
+
+    section .hire{
+        min-height: 10vh;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+    
+    }
+    section .hire a{
+        position: relative;
+        background: #2d2d2d;
+        color: goldenrod;
+        padding:10px 20px;
+        font-size: 14px;
+        text-decoration: none;
+        border-radius: 10px;
+        margin: 0 20px;
+
+        overflow: hidden;
+    }
+
+
+    footer{
+        width: 100%;
+    }
+    footer:hover{
+        height:40vh;
+    }
+    footer .contact h1{
+        margin-top: 1vh;
+        font-size: 50px;
+    }
+    footer:hover .contact h1{
+        font-size: 50px;
+    }
+    footer:hover .contact ul.ewttt{
+        transform: translate(0%);
+    }
+    footer:hover ul.ewttt li img{
+        margin:10px 10px 0;
+    }
+    footer ul.ewttt li{
+        margin:10px 40px 0;
+    }
+    footer:hover .contact ul.ewttt li img{
+        width: 30px;
+    }
+    footer:hover .contact ul.ewttt li{
+        margin:10px 15px;
+    }
+    footer .contact .all{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    footer .contact ul.ewttt li img{
+        width: 30px;
+    }
+    footer .contact ul.ewttt{
+        display: flex;
+        list-style:none;
+        justify-content: center;
+        transition: all 1s linear;
+    }
+    footer ul.ewttt li{
+        margin: 10px 20px;
+    }
+    footer .contact .all ul{
+        margin: 0;
+        margin-bottom: 20px;
+    }
+    footer .contact .all ul li{
+        margin: 15px;
+        font-size: 14px;
+    }
+    footer .contact .all .friends{
+        font-size: 24px;
+        margin: 0;
+    }
+    footer .contact .all .friends a{
+        text-align: center;
+        font-size: 14px;
+    }
+
+
+
+    nav ul li {
+        margin:0 10px;
+        list-style: none;
+    }
+    nav ul li a{
+        text-decoration: none;
+        color: #fff;
+        font-size: 14px;
+        transition: all .3s;
+    }
+}
+@media (max-width:414px) {
+    section .projects .card{
+        display: flex;
+        flex-direction: column;
+        width: 200px;
+        border-radius: 20px 20px 0 0;
+        border-radius: 20px 20px 0 0;
+        animation: card 20s  infinite;
+    }
+    @keyframes card {
+        0%{
+            transform: translate(0%);
+        }
+        25%{
+            transform: translate(-125%);
+        }
+        50%{
+            transform: translate(-250%);
+        }
+        75%{
+
+            transform: translate(-376%);
+        }
+        100%{
+            transform: translate(-513%);
+        }
+    
+    }
+    
+}
+@media (max-width:884px) {
+    .intro .cover{
+        width: 320px;
+        height: 320px;
+        border-radius: 50%;
+        overflow: hidden;
+        animation: img 2s forwards;
+    }
+    .intro img{
+        margin-left: -75px;
+        margin-top: -90px;
+        scale:1.5;
+    }
+
+
+    @keyframes card {
+        0%{
+            transform: translate(0%);
+        }
+        25%{
+            transform: translate(-142%);
+        }
+        50%{
+            transform: translate(-288%);
+        }
+        75%{
+
+            transform: translate(-434%);
+        }
+        100%{
+            transform: translate(-586%);
+        }
+    
+    }
+
+
+
+    footer{
+        width: 100%;
+    }
+    footer:hover{
+        height:30vh;
+    }
+    footer .contact h1{
+        margin-top: 1vh;
+        font-size: 50px;
+    }
+    footer:hover .contact h1{
+        font-size: 50px;
+    }
+    footer:hover .contact ul.ewttt{
+        transform: translate(0%);
+    }
+    footer:hover ul.ewttt li img{
+        margin:10px 10px 0;
+    }
+
+    footer:hover .contact ul.ewttt li img{
+        width: 30px;
+    }
+    footer:hover .contact ul.ewttt li{
+        margin:10px 50px;
+    }
+    footer .contact .all{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    footer .contact ul.ewttt li img{
+        width: 30px;
+    }
+    footer .contact ul.ewttt{
+        display: flex;
+        list-style:none;
+        justify-content: center;
+        transition: all 1s linear;
+    }
+    footer ul.ewttt li{
+        margin: 10px 40px;
+    }
+    footer .contact .all ul{
+        margin: 0;
+        margin-bottom: 20px;
+    }
+    footer .contact .all ul li{
+        margin: 10px 50px;
+        font-size: 14px;
+    }
+    footer .contact .all .friends{
+        font-size:24px;
+        margin: 0;
+    }
+    footer .contact .all .friends a{
+        text-align: center;
+        font-size: 24px;
+    }
+
+
+    section .hire{
+        min-height: 10vh;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+    
+    }
+    section .hire a{
+        position: relative;
+        background: #2d2d2d;
+        color: goldenrod;
+        padding:15px 25px;
+        font-size: 14px;
+        text-decoration: none;
+        border-radius: 10px;
+        margin: 0 30px;
+        overflow: hidden;
+    }
+}
+@media (max-width:414px) {
+    section .projects .card{
+        display: flex;
+        flex-direction: column;
+        width: 200px;
+        border-radius: 20px 20px 0 0;
+        border-radius: 20px 20px 0 0;
+        animation: card 20s  infinite;
+    }
+    @keyframes card {
+        0%{
+            transform: translate(0%);
+        }
+        25%{
+            transform: translate(-125%);
+        }
+        50%{
+            transform: translate(-250%);
+        }
+        75%{
+
+            transform: translate(-376%);
+        }
+        100%{
+            transform: translate(-513%);
+        }
+    
+    }
+    
+    button.btn{
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        height: 35px;
+        width: 35px;
+        border-radius: 10px;
+    }
+    button.btn a{
+        text-decoration: none;
+        font-size: 40px;
+        color: rgb(0, 0, 0);
+    }
+}
+
+@media (max-width:393px) {
+    section .projects .card{
+        display: flex;
+        flex-direction: column;
+        width: 200px;
+        border-radius: 20px 20px 0 0;
+        border-radius: 20px 20px 0 0;
+        animation: card 20s  infinite;
+    }
+    @keyframes card {
+        0%{
+            transform: translate(0%);
+        }
+        25%{
+            transform: translate(-125%);
+        }
+        50%{
+            transform: translate(-250%);
+        }
+        75%{
+
+            transform: translate(-376%);
+        }
+        100%{
+            transform: translate(-513%);
+        }
+    
+    }
+    
+}
+
+
 @media (max-width:430px) {
     body{
         overflow: visible;
