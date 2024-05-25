@@ -1,26 +1,114 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
-body{
-    background: #000b22;
+
+body {
+    background-color: #004553;
+    scroll-behavior: smooth;
+    scroll-snap-stop: normal;
     color: #fff;
 }
-nav{
+
+section:nth-child(1) {
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    height: 100vh;
+}
+
+section:nth-child(1) img {
+    position: absolute;
+}
+
+section:nth-child(1) img:nth-child(2) {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+section:nth-child(1) img:nth-child(3) {
+    top: 10%;
+    left: 20%;
+    width: 10%;
+    animation: moon 2s forwards;
+}
+@keyframes moon {
+    0%{
+        transform: translateX(-200%) translateY(150px);
+    }    
+}
+
+
+
+section:nth-child(1) img:nth-child(4) {
+    top: 0;
+    right: -20%;
+    width: 2%;
+    filter: drop-shadow(10px -30px 30px rgb(255, 128, 0));
+}
+
+section:nth-child(1) img:nth-child(5) {
+    top: 0;
+    right: -10%;
+    width: 2%;
+    filter: drop-shadow(10px -30px 30px rgb(255, 128, 0));
+}
+
+section:nth-child(1) img:nth-child(7) {
+    bottom: 0;
+    left: 30%;
+    width: 10%;
+    opacity: .98;
+}
+section:nth-child(1) img:nth-child(8) {
+    bottom: -17%;
+    left: 0%;
+    width: 110%;
+    height: 50%;
+}
+
+
+
+
+
+nav {
+    position: absolute;
+    top: 2vh;
+    z-index: 2;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
     min-height: 10vh;
 }
-nav ul{
+
+nav ul {
     display: flex;
 }
+
 nav ul li {
-    margin:0 30px;
+    margin: 0 30px;
     list-style: none;
+    transition: all .3s linear;
 }
-nav ul li::before{
+
+nav ul li.active {
+    background-color: rgb(214, 93, 0);
+    border-radius: 5px;
+    padding: 2px;
+}
+
+nav ul li.active::before {
+    animation: none;
+}
+
+nav ul li.active::after {
+    animation: none;
+}
+
+nav ul li::before {
     content: "";
     position: absolute;
     top: -2px;
@@ -28,10 +116,11 @@ nav ul li::before{
     width: 0;
     background-color: goldenrod;
     border-radius: 50px;
-    animation:btn 6s linear infinite;
+    animation: btn 6s linear infinite;
     animation-delay: 2s;
 }
-nav ul li::after{
+
+nav ul li::after {
     content: "";
     position: absolute;
     bottom: -2px;
@@ -41,104 +130,127 @@ nav ul li::after{
     animation: btntwo 6s linear infinite;
     animation-delay: 2s;
 }
+
 @keyframes btn {
-    0%{
+    0% {
         width: 0%;
     }
-    50%{
+
+    50% {
         width: 100%;
     }
-    100%{
+
+    100% {
         width: 0%;
     }
 }
+
 @keyframes btntwo {
-    0%{
+    0% {
         width: 0%;
     }
-    50%{
+
+    50% {
         width: 100%;
         transform: translate(-100%);
     }
-    100%{
+
+    100% {
         width: 0%;
     }
 }
-nav ul li:nth-child(1){
+
+nav ul li:nth-child(1) {
     animation: nav 2s forwards;
     animation-delay: .1s;
 }
-nav ul li:nth-child(2){
+
+nav ul li:nth-child(2) {
     animation: nav 2s forwards;
     animation-delay: .2s;
 }
-nav ul li:nth-child(3){
+
+nav ul li:nth-child(3) {
     animation: nav 2s forwards;
     animation-delay: .3s;
 }
-nav ul li:nth-child(4){
+
+nav ul li:nth-child(4) {
     animation: nav 2s forwards;
     animation-delay: .4s;
 }
+
 @keyframes nav {
-    0%{
+    0% {
         transform: translateY(-100px);
         opacity: 1;
     }
 }
-nav ul li:hover::before{
+
+nav ul li:hover::before {
     animation: none;
 }
-nav ul li:hover::after{
+
+nav ul li:hover::after {
     animation: none;
 }
-nav ul li a{
+
+nav ul li a {
     text-decoration: none;
     color: #fff;
     font-size: 30px;
     transition: all .3s;
 }
-nav ul li a:hover{
-    color: red;
+
+nav ul li:hover {
+    background-color: rgb(214, 93, 0);
+    border-radius: 5px;
+    padding: 2px;
 }
 
 
-
-section .intro{
+section .intro {
     min-height: 90vh;
     display: flex;
     align-items: center;
+    justify-content: center;
     padding: 10px;
 }
-.intro .cover{
-    width: 420px;
-    height: 420px;
+
+.intro .cover {
+    width: 320px;
+    height: 320px;
     margin-right: 60px;
     border-radius: 50%;
     overflow: hidden;
     animation: img 2s forwards;
 }
-.intro img{
-    margin-left: 20px;
+
+.intro img {
+    margin-left: -40px;
     margin-top: 10px;
-    scale:2;
+    scale: 2;
 }
+
 @keyframes img {
-    0%{
+    0% {
         transform: translate(-620px) rotate(-360deg);
         opacity: 0;
     }
 }
-.intro .info h1{
+
+.intro .info h1 {
     font-size: 90px;
     animation: h1 2s forwards;
 }
+
 @keyframes h1 {
-    0%{
+    0% {
         transform: translate(320px);
     }
 }
-.intro .info .li{
+
+.intro .info .li {
     display: flex;
     flex-direction: column;
     list-style: none;
@@ -148,59 +260,74 @@ section .intro{
     overflow: hidden;
     animation: li 2s forwards;
 }
+
 @keyframes li {
-    0%{
+    0% {
         transform: translateY(120px);
     }
 }
-.intro .info .li span{
+
+.intro .info .li span {
     font-size: 50px;
-    animation: autoscroll 4s  infinite;
+    animation: autoscroll 4s infinite;
     animation-delay: 5s;
 }
+
 @keyframes autoscroll {
-    0%{
-        transform: translateY(0);  
-    }    
-    50%{
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
         transform: translateY(-60px);
-    }    
-    100%{
+    }
+
+    100% {
         transform: translateY(-116px);
-    }    
-    
+    }
+
 }
 
 
 
-section .about .desc{
+
+
+section .about .desc {
+    margin-top: 20vh;
     padding: 10px;
     min-height: 100vh;
 }
-section .about .desc p{
+
+section .about .desc p {
     font-size: 24px;
     margin-bottom: 30px;
 }
-section .about .desc p span{
+
+section .about .desc p span {
     color: goldenrod;
 }
-section .about .desc ul li{
+
+section .about .desc ul li {
     font-size: 24px;
     margin-bottom: 10px;
 }
-section .about .desc h4{
+
+section .about .desc h4 {
     color: goldenrod;
     font-size: 30px;
     margin-bottom: 10px;
 }
-section .about .desc h3{
+
+section .about .desc h3 {
     color: goldenrod;
     font-size: 30px;
     margin-bottom: 10px;
 }
 
 
-section .projects{
+
+
+section .projects {
     display: flex;
     flex-direction: row;
     justify-content: start;
@@ -208,44 +335,52 @@ section .projects{
     min-height: 50vh;
     overflow: hidden;
 }
-section .projects .card{
+
+section .projects .card {
     display: flex;
     flex-direction: column;
     width: 280px;
     border-radius: 20px 20px 0 0;
     margin-right: 15%;
     border-radius: 20px 20px 0 0;
-    animation: card 10s  infinite;
+    animation: card 10s infinite;
 }
-section .projects .card img{
+
+section .projects .card img {
     border-radius: 20px 20px 0 0;
     opacity: 25;
     transition: all 1s;
 }
-section .projects:hover .card{
+
+section .projects:hover .card {
     animation-play-state: paused;
 }
-section .projects .card img{
+
+section .projects .card img {
     border-radius: 20px 20px 0 0;
     opacity: .5;
     transition: all .3s linear;
 }
-section .projects .card img:hover{
+
+section .projects .card img:hover {
     margin-bottom: 10px;
     cursor: pointer;
     opacity: 1;
 }
-section .projects .card .desc{
+
+section .projects .card .desc {
     display: flex;
     flex-direction: column;
     z-index: 2;
-    padding:0 0 10px 0px;
+    padding: 0 0 10px 0px;
     background: #2d2d2d;
 }
-section .projects .card .desc h1{
+
+section .projects .card .desc h1 {
     color: goldenrod;
 }
-section .projects .card .desc button{
+
+section .projects .card .desc button {
     position: relative;
     align-self: center;
     width: 220px;
@@ -254,24 +389,28 @@ section .projects .card .desc button{
     overflow: hidden;
     cursor: pointer;
 }
-section .projects .card .desc button::before{
+
+section .projects .card .desc button::before {
     position: absolute;
     content: " ";
     left: -100%;
     width: 220px;
     height: 60px;
     transform: skewX(45deg);
-    background: linear-gradient(-90deg, pink 50% ,cyan);
+    background: linear-gradient(-90deg, pink 50%, cyan);
 }
-section .projects .card .desc button:hover::before{
+
+section .projects .card .desc button:hover::before {
     animation: glow 2s ease-out forwards;
 }
+
 @keyframes glow {
-    100%{
+    100% {
         transform: translate(200%);
     }
 }
-section .projects .card .desc button a{
+
+section .projects .card .desc button a {
     text-decoration: none;
     color: #000;
     font-size: 24px;
@@ -279,19 +418,23 @@ section .projects .card .desc button a{
 }
 
 @keyframes card {
-    0%{
-        transform: translate(0% );
+    0% {
+        transform: translate(0%);
     }
-    25%{
+
+    25% {
         transform: translate(-198%);
     }
-    50%{
+
+    50% {
         transform: translate(-398%);
     }
-    75%{
+
+    75% {
         transform: translate(-600%);
     }
-    100%{
+
+    100% {
         transform: translate(-806%);
     }
 
@@ -299,1430 +442,602 @@ section .projects .card .desc button a{
 
 
 
-section .hire{
+section .hire {
     min-height: 20vh;
     display: flex;
     align-items: center;
     justify-content: end;
 
 }
-section .hire a{
+
+section .hire a {
     position: relative;
+    width: 140px;
+    text-align: center;
     background: #2d2d2d;
     color: goldenrod;
-    padding:20px 40px;
+    padding: 20px 40px;
     font-size: 24px;
     text-decoration: none;
     border-radius: 10px;
     margin: 0 30px;
     overflow: hidden;
 }
+section .hire a:nth-child(1){
+    background: goldenrod;
+    color: #2d2d2d;
+}
 
 
-  
 
 
-footer{
-    height: 25vh;
+footer {
+    min-height: 25vh;
     margin-top: 10vh;
-    border-radius:30px 30px 0 0;
-    box-shadow: -10px -10px 32px ;
+    border-radius: 30px 30px 0 0;
+    box-shadow: -10px -10px 32px;
+    padding: 10px;
     transition: all .3s linear;
 }
-footer:hover{
-    height: 32vh;
+
+footer:hover {
+    min-height: 30vh;
     box-shadow: -10px -10px 10px #fff;
     background: #80808069;
 }
-footer:hover .contact .all{
-    opacity: 1;
+
+footer:hover .contact ul.ewttt {
+    display: none;
 }
-footer:hover .contact ul.ewttt{
-    transform: translate(-25%);
+
+footer:hover .contact .all {
+    display: flex;
 }
-footer:hover .contact ul.ewttt li{
-    animation: icons .3s linear;
-    animation-delay: 1s;
-}
-footer:hover .contact h1{
-    font-size: 50px;
+
+footer:hover .contact h1 {
+    font-size: 60px;
     margin-top: 5vh;
 }
-footer .contact{
+
+footer:hover .friends {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer .contact {
     display: flex;
     flex-direction: column;
 }
-footer .contact h1{
+
+footer .contact h1 {
     font-size: 80px;
     text-align: center;
     transition: all .3s linear;
 }
-footer .contact ul.ewttt{
+
+footer .contact ul.ewttt {
     display: flex;
-    list-style:none;
+    list-style: none;
     justify-content: center;
     transition: all .3s linear;
 }
-footer ul.ewttt li{
-    margin: 20px 75px ;
+
+footer .contact ul.ewttt li {
+    margin: 20px 75px;
 }
-footer .contact .all{
-    opacity: 0;
-    display: flex;
-    justify-content: space-between;
+
+footer .contact .all {
+    display: none;
+    justify-content: center;
     font-size: 30px;
+    margin: 40px 0;
     transition: all .3s linear;
 }
-footer .contact .all ul{
+
+footer .contact .all ul {
     display: flex;
-    margin-right: 10vh;
 }
-footer .contact .all ul li{
-    margin: 45px;
+
+footer .contact .all ul li {
+    margin: 0 60px;
     list-style: none;
 }
-footer .contact .all ul li a{
+
+footer .contact .all ul li a {
     text-decoration: none;
     color: black;
     transition: all .3s linear;
-    color: #fff ;
+    color: #fff;
 }
-footer .contact .all ul li a:hover{
+
+footer .contact .all ul li a:hover {
     box-shadow: -2px -2px 2px;
     border-radius: 5px;
     padding: 5px;
 }
-footer .contact .all .friends{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 30px 20vh;
+
+footer .friends {
+    display: none;
+    font-size: 21px;
 }
-footer .contact .all .friends a{
-    margin-top: 20px;
+
+footer .friends a {
+    margin-top: 10px;
     text-decoration: none;
     transition: all .3s linear;
     color: #fff;
 }
-footer .contact .all .friends a:hover{
+
+footer .friends a:hover {
     box-shadow: -2px -2px 2px;
     border-radius: 5px;
     padding: 5px;
 }
-button.btn{
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
-    height: 45px;
-    width: 45px;
-    border-radius: 10px;
-}
-button.btn a{
-    text-decoration: none;
-    font-size: 50px;
-    color: rgb(0, 0, 0);
-}
-button.btn:hover{
-    transition: all .5s linear;
-    background: rgb(255, 255, 255);
-}
 
 
+
+
+
+
+
+@media (max-width:1700px) {
+
+    footer:hover {
+        min-height: 50vh;
+    }
+
+    footer .contact .all .friends {
+        font-size: 24px;
+        margin: 0;
+    }
+
+    footer .contact .all .friends a {
+        text-align: center;
+        font-size: 24px;
+    }
+}
+
+@media (max-width:1440px) {
+    section .intro {
+        flex-direction: column;
+    }
+
+    footer .contact .all ul li {
+        list-style: none;
+    }
+}
+
+@media (max-width:1100px) {
+    footer .contact .all ul li {
+        margin: 0 20px;
+        font-size: 24px;
+    }
+}
 
 @media (max-width:1024px) {
-    .intro .cover{
-        width: 320px;
-        height: 320px;
-        border-radius: 50%;
-        overflow: hidden;
-        animation: img 2s forwards;
+    section:nth-child(1) img:nth-child(7) {
+        bottom: 0;
+        left: 40%;
+        width: 20%;
+        opacity: .98;
     }
-    .intro img{
-        margin-left: -75px;
-        margin-top: -90px;
-        scale:1.5;
+    section:nth-child(1) img:nth-child(4) {
+        top: 10%;
+        right: -20%;
+        width: 5%;
+        filter: drop-shadow(10px -30px 30px rgb(255, 128, 0));
+    }
+    section:nth-child(1) img:nth-child(5) {
+        top: 10%;
+        right: -10%;
+        width: 5%;
+        filter: drop-shadow(10px -30px 30px rgb(255, 128, 0));
+    }
+
+    section:nth-child(1) img:nth-child(3) {
+        top: 10%;
+        left: 20%;
+        width: 20%;
+    }
+
+
+    section .intro {
+        display: flex;
+        align-items: start;
+        justify-content: center;
     }
 
 
     @keyframes card {
-        0%{
+        0% {
             transform: translate(0%);
         }
-        25%{
-            transform: translate(-142%);
+    
+        25% {
+            transform: translate(-154%);
         }
-        50%{
-            transform: translate(-288%);
+    
+        50% {
+            transform: translate(-310%);
         }
-        75%{
-            transform: translate(-440%);
+    
+        75% {
+            transform: translate(-464%);
         }
-        100%{
-            transform: translate(-600%);
+    
+        100% {
+            transform: translate(-620%);
         }
     
     }
 
 
-
-    footer{
-        width: 100%;
-    }
-    footer:hover{
-        height:30vh;
-    }
-    footer .contact h1{
-        margin-top: 1vh;
-        font-size: 50px;
-    }
-    footer:hover .contact h1{
-        font-size: 50px;
-    }
-    footer:hover .contact ul.ewttt{
-        transform: translate(0%);
-    }
-    footer:hover ul.ewttt li img{
-        margin:10px 10px 0;
-    }
-
-    footer:hover .contact ul.ewttt li img{
-        width: 30px;
-    }
-    footer:hover .contact ul.ewttt li{
-        margin:10px 50px;
-    }
-    footer .contact .all{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    footer .contact ul.ewttt li img{
-        width: 30px;
-    }
-    footer .contact ul.ewttt{
-        display: flex;
-        list-style:none;
-        justify-content: center;
-        transition: all 1s linear;
-    }
-    footer ul.ewttt li{
-        margin: 10px 40px;
-    }
-    footer .contact .all ul{
-        margin: 0;
-        margin-bottom: 20px;
-    }
-    footer .contact .all ul li{
-        margin: 10px 50px;
-        font-size: 14px;
-    }
-    footer .contact .all .friends{
-        font-size:24px;
-        margin: 0;
-    }
-    footer .contact .all .friends a{
-        text-align: center;
+    footer .contact .all ul li {
+        margin: 0 50px !important;
         font-size: 24px;
     }
-
-
-    section .hire{
-        min-height: 10vh;
-        display: flex;
-        align-items: center;
-        justify-content: end;
-    
-    }
-    section .hire a{
-        position: relative;
-        background: #2d2d2d;
-        color: goldenrod;
-        padding:15px 25px;
-        font-size: 14px;
-        text-decoration: none;
-        border-radius: 10px;
-        margin: 0 30px;
-        overflow: hidden;
-    }
 }
-@media (max-width:414px) {
-    section .projects .card{
+
+
+
+@media (max-width:1023px){
+    section .projects {
         display: flex;
-        flex-direction: column;
-        width: 200px;
-        border-radius: 20px 20px 0 0;
-        border-radius: 20px 20px 0 0;
-        animation: card 20s  infinite;
-    }
-    @keyframes card {
-        0%{
-            transform: translate(0%);
-        }
-        25%{
-            transform: translate(-125%);
-        }
-        50%{
-            transform: translate(-250%);
-        }
-        75%{
-
-            transform: translate(-376%);
-        }
-        100%{
-            transform: translate(-513%);
-        }
-    
-    }
-    
-}
-@media (max-width:884px) {
-    .intro .cover{
-        width: 320px;
-        height: 320px;
-        border-radius: 50%;
-        overflow: hidden;
-        animation: img 2s forwards;
-    }
-    .intro img{
-        margin-left: -75px;
-        margin-top: -90px;
-        scale:1.5;
-    }
-
-
-    @keyframes card {
-        0%{
-            transform: translate(0%);
-        }
-        25%{
-            transform: translate(-142%);
-        }
-        50%{
-            transform: translate(-288%);
-        }
-        75%{
-
-            transform: translate(-434%);
-        }
-        100%{
-            transform: translate(-586%);
-        }
-    
-    }
-
-
-
-    footer{
-        width: 100%;
-    }
-    footer:hover{
-        height:30vh;
-    }
-    footer .contact h1{
-        margin-top: 1vh;
-        font-size: 50px;
-    }
-    footer:hover .contact h1{
-        font-size: 50px;
-    }
-    footer:hover .contact ul.ewttt{
-        transform: translate(0%);
-    }
-    footer:hover ul.ewttt li img{
-        margin:10px 10px 0;
-    }
-
-    footer:hover .contact ul.ewttt li img{
-        width: 30px;
-    }
-    footer:hover .contact ul.ewttt li{
-        margin:10px 50px;
-    }
-    footer .contact .all{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    footer .contact ul.ewttt li img{
-        width: 30px;
-    }
-    footer .contact ul.ewttt{
-        display: flex;
-        list-style:none;
+        flex-wrap: wrap;
         justify-content: center;
-        transition: all 1s linear;
-    }
-    footer ul.ewttt li{
-        margin: 10px 40px;
-    }
-    footer .contact .all ul{
-        margin: 0;
-        margin-bottom: 20px;
-    }
-    footer .contact .all ul li{
-        margin: 10px 50px;
-        font-size: 14px;
-    }
-    footer .contact .all .friends{
-        font-size:24px;
-        margin: 0;
-    }
-    footer .contact .all .friends a{
-        text-align: center;
-        font-size: 24px;
-    }
-
-
-    section .hire{
-        min-height: 10vh;
-        display: flex;
-        align-items: center;
-        justify-content: end;
-    
-    }
-    section .hire a{
-        position: relative;
-        background: #2d2d2d;
-        color: goldenrod;
-        padding:15px 25px;
-        font-size: 14px;
-        text-decoration: none;
-        border-radius: 10px;
-        margin: 0 30px;
-        overflow: hidden;
-    }
-}
-@media (max-width:414px) {
-    section .projects .card{
-        display: flex;
-        flex-direction: column;
-        width: 200px;
-        border-radius: 20px 20px 0 0;
-        border-radius: 20px 20px 0 0;
-        animation: card 20s  infinite;
-    }
-    @keyframes card {
-        0%{
-            transform: translate(0%);
-        }
-        25%{
-            transform: translate(-125%);
-        }
-        50%{
-            transform: translate(-250%);
-        }
-        75%{
-
-            transform: translate(-376%);
-        }
-        100%{
-            transform: translate(-513%);
-        }
-    
-    }
-    
-    button.btn{
-        position: fixed;
-        bottom: 10px;
-        right: 10px;
-        height: 35px;
-        width: 35px;
-        border-radius: 10px;
-    }
-    button.btn a{
-        text-decoration: none;
-        font-size: 40px;
-        color: rgb(0, 0, 0);
-    }
-}
-
-@media (max-width:393px) {
-    section .projects .card{
-        display: flex;
-        flex-direction: column;
-        width: 200px;
-        border-radius: 20px 20px 0 0;
-        border-radius: 20px 20px 0 0;
-        animation: card 20s  infinite;
-    }
-    @keyframes card {
-        0%{
-            transform: translate(0%);
-        }
-        25%{
-            transform: translate(-125%);
-        }
-        50%{
-            transform: translate(-250%);
-        }
-        75%{
-
-            transform: translate(-376%);
-        }
-        100%{
-            transform: translate(-513%);
-        }
-    
-    }
-    
-}
-
-
-@media (max-width:600px) {
-    body{
-        overflow: visible;
-    }
-
-    section .intro{
-        min-height: 90vh;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        justify-content: center;
-        padding: 10px;
-    }
-    .intro .cover{
-        width: 220px;
-        height: 220px;
-        border-radius: 50%;
-        overflow: hidden;
-        animation: img 2s forwards;
-    }
-    .intro img{
-        margin-left: -90px;
-        margin-top: -90px;
-        scale:1.5;
-    }
-
-    .intro .info h1{
-        font-size: 60px;
-        animation: h1 2s forwards;
-    }
-    @keyframes h1 {
-        0%{
-            transform: translateY(80px);
-        }
-    }
-    .intro .info .li{
-        display: flex;
-        flex-direction: column;
-        list-style: none;
-        background: goldenrod;
-        height: 50px;
-        width: 250px;
-        overflow: hidden;
-        animation: li 2s forwards;
-    }
-    @keyframes li {
-        0%{
-            transform: translateY(120px);
-        }
-    }
-    .intro .info .li span{
-        font-size: 40px;
-        animation: autoscroll 4s  infinite;
-        animation-delay: 5s;
-    }
-    @keyframes autoscroll {
-        0%{
-            transform: translateY(0);  
-        }    
-        50%{
-            transform: translateY(-50px);
-        }    
-        100%{
-            transform: translateY(-94px);
-        }    
-        
-    }
-
-
-    section .about .desc{
-        padding: 10px;
-        min-height: 100vh;
-    }
-    section .about .desc p{
-        font-size: 14px;
-        margin-bottom: 30px;
-    }
-    section .about .desc p span{
-        color: goldenrod;
-    }
-    section .about .desc ul li{
-        font-size: 14px;
-        margin-bottom: 10px;
-    }
-    section .about .desc h4{
-        color: goldenrod;
-        font-size: 20px;
-        margin-bottom: 10px;
-    }
-    section .about .desc h3{
-        color: goldenrod;
-        font-size: 20px;
-        margin-bottom: 10px;
-    }
-
-
-    section .projects{
-        display: flex;
-        justify-content: start;
         align-items: center;
         min-height: 50vh;
-        overflow: hidden;
     }
-    section .projects .card{
+    
+    section .projects .card {
         display: flex;
         flex-direction: column;
-        width: 200px;
-        border-radius: 20px 20px 0 0;
-        border-radius: 20px 20px 0 0;
-        animation: card 20s  infinite;
-    }
-    section .projects .card img{
-        width: 200px;
-        height: 220px;
-        border-radius: 20px 20px 0 0;
-        opacity: 25;
-        transition: all .3s;
-    }
-    section .projects:hover .card{
-        animation-play-state: paused;
-    }
-    section .projects .card img{
-        border-radius: 20px 20px 0 0;
-        opacity: .5;
-        transition: all .3s linear;
-    }
-    section .projects .card:hover img{
-        margin-bottom: 10px;
-        cursor: pointer;
-        opacity: 1;
-    }
-    section .projects .card .desc{
-        display: flex;
-        flex-direction: column;
-        z-index: 2;
-        padding:0 0 10px 0px;
-        background: #2d2d2d;
-    }
-    section .projects .card .desc h1{
-        color: goldenrod;
-    }
-    section .projects .card .desc button{
-        position: relative;
-        align-self: center;
-        width: 180px;
-        margin-top: 10px;
-        border-radius: 5px;
-        overflow: hidden;
-        cursor: pointer;
-    }
-    section .projects .card .desc button::before{
-        position: absolute;
-        content: " ";
-        left: -100%;
-        width: 180px;
-        height: 60px;
-        transform: skewX(45deg);
-        background: linear-gradient(-90deg, pink 50% ,cyan);
-    }
-    section .projects .card .desc button:hover::before{
-        animation: glow 2s ease-out forwards;
-    }
-    @keyframes glow {
-        100%{
-            transform: translate(200%);
-        }
-    }
-    section .projects .card .desc button a{
-        text-decoration: none;
-        color: #000;
-        font-size: 24px;
-        z-index: 2;
+        width: 40%;
+        margin:5%;
+        animation: card none;
     }
     
-    @keyframes card {
-        0%{
-            transform: translate(0%);
-        }
-        25%{
-            transform: translate(-128%);
-        }
-        50%{
-            transform: translate(-258%);
-        }
-        75%{
-
-            transform: translate(-388%);
-        }
-        100%{
-            transform: translate(-530%);
-        }
-    
-    }
-
-
-    section .hire{
-        min-height: 10vh;
-        display: flex;
-        align-items: center;
-        justify-content: end;
-    
-    }
-    section .hire a{
-        position: relative;
-        background: #2d2d2d;
-        color: goldenrod;
-        padding:10px 20px;
-        font-size: 14px;
-        text-decoration: none;
-        border-radius: 10px;
-        margin: 0 20px;
-
-        overflow: hidden;
-    }
-
-
-    footer{
+    section .projects .card img {
         width: 100%;
     }
-    footer:hover{
-        height:40vh;
-    }
-    footer .contact h1{
-        margin-top: 1vh;
-        font-size: 50px;
-    }
-    footer:hover .contact h1{
-        font-size: 50px;
-    }
-    footer:hover .contact ul.ewttt{
-        transform: translate(0%);
-    }
-    footer:hover ul.ewttt li img{
-        margin:10px 10px 0;
-    }
-    footer ul.ewttt li{
-        margin:10px 40px 0;
-    }
-    footer:hover .contact ul.ewttt li img{
-        width: 30px;
-    }
-    footer:hover .contact ul.ewttt li{
-        margin:10px 15px;
-    }
-    footer .contact .all{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    footer .contact ul.ewttt li img{
-        width: 30px;
-    }
-    footer .contact ul.ewttt{
-        display: flex;
-        list-style:none;
-        justify-content: center;
-        transition: all 1s linear;
-    }
-    footer ul.ewttt li{
-        margin: 10px 20px;
-    }
-    footer .contact .all ul{
-        margin: 0;
-        margin-bottom: 20px;
-    }
-    footer .contact .all ul li{
-        margin: 15px;
-        font-size: 14px;
-    }
-    footer .contact .all .friends{
+}
+
+
+@media (max-width:905px) {
+    footer .contact .all ul li {
+        margin: 0 45px !important;
         font-size: 24px;
-        margin: 0;
-    }
-    footer .contact .all .friends a{
-        text-align: center;
-        font-size: 14px;
-    }
-
-
-
-    nav ul li {
-        margin:0 10px;
-        list-style: none;
-    }
-    nav ul li a{
-        text-decoration: none;
-        color: #fff;
-        font-size: 14px;
-        transition: all .3s;
     }
 }
-@media (max-width:414px) {
-    section .projects .card{
-        display: flex;
-        flex-direction: column;
-        width: 200px;
-        border-radius: 20px 20px 0 0;
-        border-radius: 20px 20px 0 0;
-        animation: card 20s  infinite;
-    }
-    @keyframes card {
-        0%{
-            transform: translate(0%);
-        }
-        25%{
-            transform: translate(-125%);
-        }
-        50%{
-            transform: translate(-250%);
-        }
-        75%{
 
-            transform: translate(-376%);
-        }
-        100%{
-            transform: translate(-513%);
-        }
-    
-    }
-    
-}
-@media (max-width:884px) {
-    .intro .cover{
-        width: 320px;
-        height: 320px;
-        border-radius: 50%;
-        overflow: hidden;
-        animation: img 2s forwards;
-    }
-    .intro img{
-        margin-left: -75px;
-        margin-top: -90px;
-        scale:1.5;
+@media (max-width:886px) {
+    section .about .desc p {
+        font-size: 20px !important;
     }
 
-
-    @keyframes card {
-        0%{
-            transform: translate(0%);
-        }
-        25%{
-            transform: translate(-142%);
-        }
-        50%{
-            transform: translate(-288%);
-        }
-        75%{
-
-            transform: translate(-434%);
-        }
-        100%{
-            transform: translate(-586%);
-        }
-    
+    section .about .desc ul li {
+        font-size: 20px !important;
     }
 
-
-
-    footer{
-        width: 100%;
-    }
-    footer:hover{
-        height:30vh;
-    }
-    footer .contact h1{
-        margin-top: 1vh;
-        font-size: 50px;
-    }
-    footer:hover .contact h1{
-        font-size: 50px;
-    }
-    footer:hover .contact ul.ewttt{
-        transform: translate(0%);
-    }
-    footer:hover ul.ewttt li img{
-        margin:10px 10px 0;
-    }
-
-    footer:hover .contact ul.ewttt li img{
-        width: 30px;
-    }
-    footer:hover .contact ul.ewttt li{
-        margin:10px 50px;
-    }
-    footer .contact .all{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    footer .contact ul.ewttt li img{
-        width: 30px;
-    }
-    footer .contact ul.ewttt{
-        display: flex;
-        list-style:none;
-        justify-content: center;
-        transition: all 1s linear;
-    }
-    footer ul.ewttt li{
-        margin: 10px 40px;
-    }
-    footer .contact .all ul{
-        margin: 0;
-        margin-bottom: 20px;
-    }
-    footer .contact .all ul li{
-        margin: 10px 50px;
-        font-size: 14px;
-    }
-    footer .contact .all .friends{
-        font-size:24px;
-        margin: 0;
-    }
-    footer .contact .all .friends a{
-        text-align: center;
+    section .about .desc h4 {
         font-size: 24px;
     }
 
+    section .about .desc h3 {
+        font-size: 24px !important;
 
-    section .hire{
+    }
+
+
+    footer {
+        box-shadow: -5px -5px 30px !important;
+
+    }
+
+    footer:hover {
+        box-shadow: none !important;
+    }
+
+    footer .contact ul.ewttt li img {
+        width: 30px;
+    }
+
+    footer .contact .all ul li {
+        margin: 0 40px !important;
+        font-size: 20px;
+    }
+}
+
+@media (max-width:740px) {
+    section .about .desc {
+        margin-top: 20vh;
+        padding: 10px;
         min-height: 10vh;
-        display: flex;
-        align-items: center;
-        justify-content: end;
-    
     }
-    section .hire a{
-        position: relative;
-        background: #2d2d2d;
-        color: goldenrod;
-        padding:15px 25px;
-        font-size: 14px;
-        text-decoration: none;
-        border-radius: 10px;
-        margin: 0 30px;
-        overflow: hidden;
+    section .about .desc p {
+        font-size: 14px !important;
     }
-}
-@media (max-width:414px) {
-    section .projects .card{
-        display: flex;
-        flex-direction: column;
-        width: 200px;
-        border-radius: 20px 20px 0 0;
-        border-radius: 20px 20px 0 0;
-        animation: card 20s  infinite;
-    }
-    @keyframes card {
-        0%{
-            transform: translate(0%);
-        }
-        25%{
-            transform: translate(-125%);
-        }
-        50%{
-            transform: translate(-250%);
-        }
-        75%{
 
-            transform: translate(-376%);
-        }
-        100%{
-            transform: translate(-513%);
-        }
-    
+    section .about .desc ul li {
+        font-size: 14px !important;
     }
-    
-    button.btn{
-        position: fixed;
-        bottom: 10px;
-        right: 10px;
-        height: 35px;
-        width: 35px;
-        border-radius: 10px;
+
+    section .about .desc h4 {
+        font-size: 20px;
     }
-    button.btn a{
-        text-decoration: none;
-        font-size: 40px;
-        color: rgb(0, 0, 0);
+
+    section .about .desc h3 {
+        font-size: 20px !important;
+    }
+
+    section .hire {
+        min-height: 20vh;
+    }
+
+    section .hire a {
+        padding: 5px 5px !important;
+        font-size: 20px !important;
+        margin: 0 20px !important;
+        width: 120px;
+
+    }
+
+
+    footer .contact h1 {
+        font-size: 60px !important;
+    }
+
+    footer .contact ul.ewttt li {
+        margin: 0 50px !important;
+    }
+
+    footer .contact .all ul li {
+        margin: 0 30px !important;
+        font-size: 20px;
     }
 }
 
-@media (max-width:393px) {
-    section .projects .card{
+@media (max-width:640px) {
+    section:nth-child(1) img:nth-child(7) {
+        bottom: 0;
+        left: 50%;
+        width: 35%;
+        opacity: .98;
+    }
+
+    section:nth-child(1) img:nth-child(4) {
+        top: 10%;
+        right: -20%;
+        width: 8%;
+        filter: drop-shadow(10px -30px 30px rgb(255, 128, 0));
+    }
+
+    section:nth-child(1) img:nth-child(5) {
+        top: 10%;
+        right: -10%;
+        width: 8%;
+        filter: drop-shadow(10px -30px 30px rgb(255, 128, 0));
+    }
+
+    section:nth-child(1) img:nth-child(3) {
+        top: 10%;
+        left: 20%;
+        width: 30%;
+    }
+
+
+    section .projects {
         display: flex;
-        flex-direction: column;
-        width: 200px;
-        border-radius: 20px 20px 0 0;
-        border-radius: 20px 20px 0 0;
-        animation: card 20s  infinite;
-    }
-    @keyframes card {
-        0%{
-            transform: translate(0%);
-        }
-        25%{
-            transform: translate(-125%);
-        }
-        50%{
-            transform: translate(-250%);
-        }
-        75%{
-
-            transform: translate(-376%);
-        }
-        100%{
-            transform: translate(-513%);
-        }
-    
-    }
-    
-}
-
-
-@media (max-width:430px) {
-    body{
-        overflow: visible;
-    }
-
-    section .intro{
-        min-height: 90vh;
-        display: flex;
-        align-items: center;
         flex-direction: column;
         justify-content: center;
-        padding: 10px;
-    }
-    .intro .cover{
-        width: 220px;
-        height: 220px;
-        border-radius: 50%;
-        overflow: hidden;
-        animation: img 2s forwards;
-    }
-    .intro img{
-        margin-left: -90px;
-        margin-top: -90px;
-        scale:1.5;
-    }
-
-    .intro .info h1{
-        font-size: 60px;
-        animation: h1 2s forwards;
-    }
-    @keyframes h1 {
-        0%{
-            transform: translateY(80px);
-        }
-    }
-    .intro .info .li{
-        display: flex;
-        flex-direction: column;
-        list-style: none;
-        background: goldenrod;
-        height: 50px;
-        width: 250px;
-        overflow: hidden;
-        animation: li 2s forwards;
-    }
-    @keyframes li {
-        0%{
-            transform: translateY(120px);
-        }
-    }
-    .intro .info .li span{
-        font-size: 40px;
-        animation: autoscroll 4s  infinite;
-        animation-delay: 5s;
-    }
-    @keyframes autoscroll {
-        0%{
-            transform: translateY(0);  
-        }    
-        50%{
-            transform: translateY(-50px);
-        }    
-        100%{
-            transform: translateY(-94px);
-        }    
-        
-    }
-
-
-    section .about .desc{
-        padding: 10px;
-        min-height: 100vh;
-    }
-    section .about .desc p{
-        font-size: 14px;
-        margin-bottom: 30px;
-    }
-    section .about .desc p span{
-        color: goldenrod;
-    }
-    section .about .desc ul li{
-        font-size: 14px;
-        margin-bottom: 10px;
-    }
-    section .about .desc h4{
-        color: goldenrod;
-        font-size: 20px;
-        margin-bottom: 10px;
-    }
-    section .about .desc h3{
-        color: goldenrod;
-        font-size: 20px;
-        margin-bottom: 10px;
-    }
-
-
-    section .projects{
-        display: flex;
-        justify-content: start;
         align-items: center;
         min-height: 50vh;
-        overflow: hidden;
     }
-    section .projects .card{
+    
+    section .projects .card {
         display: flex;
         flex-direction: column;
-        width: 200px;
-        border-radius: 20px 20px 0 0;
-        border-radius: 20px 20px 0 0;
-        animation: card 20s  infinite;
-    }
-    section .projects .card img{
-        width: 200px;
-        height: 220px;
-        border-radius: 20px 20px 0 0;
-        opacity: 25;
-        transition: all .3s;
-    }
-    section .projects:hover .card{
-        animation-play-state: paused;
-    }
-    section .projects .card img{
-        border-radius: 20px 20px 0 0;
-        opacity: .5;
-        transition: all .3s linear;
-    }
-    section .projects .card:hover img{
-        margin-bottom: 10px;
-        cursor: pointer;
-        opacity: 1;
-    }
-    section .projects .card .desc{
-        display: flex;
-        flex-direction: column;
-        z-index: 2;
-        padding:0 0 10px 0px;
-        background: #2d2d2d;
-    }
-    section .projects .card .desc h1{
-        color: goldenrod;
-    }
-    section .projects .card .desc button{
-        position: relative;
-        align-self: center;
-        width: 180px;
-        margin-top: 10px;
-        border-radius: 5px;
-        overflow: hidden;
-        cursor: pointer;
-    }
-    section .projects .card .desc button::before{
-        position: absolute;
-        content: " ";
-        left: -100%;
-        width: 180px;
-        height: 60px;
-        transform: skewX(45deg);
-        background: linear-gradient(-90deg, pink 50% ,cyan);
-    }
-    section .projects .card .desc button:hover::before{
-        animation: glow 2s ease-out forwards;
-    }
-    @keyframes glow {
-        100%{
-            transform: translate(200%);
-        }
-    }
-    section .projects .card .desc button a{
-        text-decoration: none;
-        color: #000;
-        font-size: 24px;
-        z-index: 2;
+        width: 90%;
+        margin: 5% 0;
+        animation: card none;
     }
     
-    @keyframes card {
-        0%{
-            transform: translate(0%);
-        }
-        25%{
-            transform: translate(-128%);
-        }
-        50%{
-            transform: translate(-258%);
-        }
-        75%{
-
-            transform: translate(-388%);
-        }
-        100%{
-            transform: translate(-520%);
-        }
-    
-    }
-
-
-    section .hire{
-        min-height: 10vh;
-        display: flex;
-        align-items: center;
-        justify-content: end;
-    
-    }
-    section .hire a{
-        position: relative;
-        background: #2d2d2d;
-        color: goldenrod;
-        padding:10px 20px;
-        font-size: 14px;
-        text-decoration: none;
-        border-radius: 10px;
-        margin: 0 20px;
-
-        overflow: hidden;
-    }
-
-
-    footer{
+    section .projects .card img {
         width: 100%;
     }
-    footer:hover{
-        height:40vh;
-    }
-    footer .contact h1{
-        margin-top: 1vh;
-        font-size: 50px;
-    }
-    footer:hover .contact h1{
-        font-size: 50px;
-    }
-    footer:hover .contact ul.ewttt{
-        transform: translate(0%);
-    }
-    footer:hover ul.ewttt li img{
-        margin:10px 10px 0;
-    }
-    footer ul.ewttt li{
-        margin:10px 40px 0;
-    }
-    footer:hover .contact ul.ewttt li img{
-        width: 30px;
-    }
-    footer:hover .contact ul.ewttt li{
-        margin:10px 15px;
-    }
-    footer .contact .all{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    footer .contact ul.ewttt li img{
-        width: 30px;
-    }
-    footer .contact ul.ewttt{
-        display: flex;
-        list-style:none;
-        justify-content: center;
-        transition: all 1s linear;
-    }
-    footer ul.ewttt li{
-        margin: 10px 20px;
-    }
-    footer .contact .all ul{
-        margin: 0;
-        margin-bottom: 20px;
-    }
-    footer .contact .all ul li{
-        margin: 15px;
-        font-size: 14px;
-    }
-    footer .contact .all .friends{
-        font-size: 24px;
-        margin: 0;
-    }
-    footer .contact .all .friends a{
-        text-align: center;
-        font-size: 14px;
+    section .projects .card:nth-child(5),
+    section .projects .card:nth-child(6),
+    section .projects .card:nth-child(7),
+    section .projects .card:nth-child(8){
+        display: none;
     }
 
 
 
+    footer .contact .all ul li {
+        margin: 0 20px !important;
+        font-size: 20px;
+    }
+}
+
+
+
+
+@media (max-width:550px) {
+    footer .contact ul.ewttt li {
+        margin: 0 40px !important;
+    }
+
+    footer .contact .all ul li {
+        margin: 0 10px !important;
+        font-size: 20px;
+    }
+}
+
+@media (max-width:500px) {
+    footer .contact ul.ewttt li {
+        margin: 0 30px !important;
+    }
+}
+
+@media (max-width:440px) {
     nav ul li {
-        margin:0 10px;
-        list-style: none;
+        margin: 0 20px;
     }
-    nav ul li a{
-        text-decoration: none;
-        color: #fff;
+
+    nav ul li a {
+        font-size: 20px;
+    }
+
+    section:nth-child(1) img:nth-child(3) {
+        top: 10%;
+        left: 20%;
+        width: 40%;
+    }
+
+    .intro .cover {
+        width: 230px;
+        height: 230px;
+        margin-right: 60px;
+        border-radius: 50%;
+        overflow: hidden;
+        animation: img 2s forwards;
+    }
+
+    .intro img {
+        margin-left: -90px;
+        margin-top: 20px;
+        scale: 2;
+    }
+
+    .intro .info h1 {
+        font-size: 70px;
+    }
+
+    .intro .info .li {
+        height: 30px;
+        width: 180px;
+    }
+
+    .intro .info .li span {
+        font-size: 24px;
+    }
+
+    @keyframes autoscroll {
+        0% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-28px);
+        }
+
+        100% {
+            transform: translateY(-54px);
+        }
+
+    }
+
+
+    section .hire {
+        min-height: 20vh;
+
+
+    }
+
+    section .hire a {
+        padding: 5px 5px !important;
+        font-size: 20px !important;
+        margin: 0 20px !important;
+
+    }
+
+
+    footer .contact h1 {
+        font-size: 40px !important;
+    }
+
+    footer .contact .all ul li {
+        margin: 0 10px !important;
         font-size: 14px;
-        transition: all .3s;
     }
 }
 
+@media (max-width:414px) {
+    footer .contact ul.ewttt li {
+        margin: 0 10px !important;
+    }
+}
 
+@media (max-width:375px) {
+    nav ul li {
+        margin: 0 15px;
+    }
+}
 
-@media (max-width:412px) {
-    section .projects .card{
-        display: flex;
-        flex-direction: column;
+@media (max-width:320px) {
+    nav ul li {
+        margin: 0 15px;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+    }
+
+    section:nth-child(1) img:nth-child(3) {
+        top: 10%;
+        left: 20%;
+        width: 40%;
+    }
+
+    .intro .cover {
         width: 200px;
-        border-radius: 20px 20px 0 0;
-        border-radius: 20px 20px 0 0;
-        animation: card 20s  infinite;
+        height: 200px;
+        margin-right: 60px;
+        border-radius: 50%;
+        overflow: hidden;
+        animation: img 2s forwards;
     }
-    @keyframes card {
-        0%{
-            transform: translate(0%);
-        }
-        25%{
-            transform: translate(-128%);
-        }
-        50%{
-            transform: translate(-258%);
-        }
-        75%{
-    
-            transform: translate(-388%);
-        }
-        100%{
-            transform: translate(-520%);
-        }
-    
-    }
-    
-}
-@media (max-width:393px) {
-    section .projects .card{
-        display: flex;
-        flex-direction: column;
-        width: 200px;
-        border-radius: 20px 20px 0 0;
-        border-radius: 20px 20px 0 0;
-        animation: card 20s  infinite;
-    }
-    @keyframes card {
-        0%{
-            transform: translate(0%);
-        }
-        25%{
-            transform: translate(-125%);
-        }
-        50%{
-            transform: translate(-250%);
-        }
-        75%{
 
-            transform: translate(-376%);
-        }
-        100%{
-            transform: translate(-513%);
-        }
-    
+    .intro img {
+        margin-left: -100px;
+        margin-top: 20px;
+        scale: 2;
     }
-    
-}
-@media (max-width:390px) {
-    section .projects .card{
-        display: flex;
-        flex-direction: column;
-        width: 200px;
-        border-radius: 20px 20px 0 0;
-        border-radius: 20px 20px 0 0;
-        animation: card 20s  infinite;
-    }
-    @keyframes card {
-        0%{
-            transform: translate(0%);
-        }
-        25%{
-            transform: translate(-125%);
-        }
-        50%{
-            transform: translate(-250%);
-        }
-        75%{
 
-            transform: translate(-376%);
-        }
-        100%{
-            transform: translate(-509%);
-        }
-    
+    .intro .info h1 {
+        font-size: 60px;
     }
-    
-}
-@media (max-width:360px) {
-    section .projects .card{
-        display: flex;
-        flex-direction: column;
-        width: 200px;
-        border-radius: 20px 20px 0 0;
-        border-radius: 20px 20px 0 0;
-        animation: card 20s  infinite;
-    }
-    @keyframes card {
-        0%{
-            transform: translate(0%);
-        }
-        25%{
-            transform: translate(-125%);
-        }
-        50%{
-            transform: translate(-250%);
-        }
-        75%{
 
-            transform: translate(-376%);
-        }
-        100%{
-            transform: translate(-504%);
-        }
-    
+    .intro .info .li {
+        height: 25px;
+        width: 120px;
     }
-    
-}
-@media (max-width:360px) {
-    section .projects .card{
-        display: flex;
-        flex-direction: column;
-        width: 200px;
-        border-radius: 20px 20px 0 0;
-        border-radius: 20px 20px 0 0;
-        animation: card 20s  infinite;
-    }
-    @keyframes card {
-        0%{
-            transform: translate(0%);
-        }
-        25%{
-            transform: translate(-122%);
-        }
-        50%{
-            transform: translate(-245%);
-        }
-        75%{
 
-            transform: translate(-369%);
-        }
-        100%{
-            transform: translate(-491%);
-        }
-    
+    .intro .info .li span {
+        font-size: 20px;
     }
-    
+
+    @keyframes autoscroll {
+        0% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-24px);
+        }
+
+        100% {
+            transform: translateY(-46px);
+        }
+
+    }
+
+
+    footer .contact .all ul li {
+        margin: 0 10px !important;
+        font-size: 10px;
+    }
 }
+
