@@ -4,12 +4,12 @@
 
 }
 
+
 body {
     background-color: #005f71;
     scroll-behavior: smooth;
     scroll-snap-stop: normal;
     color: #fff;
-    overflow-x: hidden;
 }
 
 
@@ -55,11 +55,20 @@ body {
     left: 20%;
     filter: drop-shadow(0px 0px 100px #fff);
     width: 10%;
-    animation: moon 4s ease-out forwards;
+    animation: moon 4s ease-out forwards,
+    rotate 60s linear infinite 4s;
 }
 @keyframes moon {
     0%{
         transform: translateX(-320%) translateY(300px) rotate(-360deg);
+    }    
+}
+@keyframes rotate {
+    0%{
+        transform:rotate(0deg);
+    }    
+    100%{
+        transform:rotate(360deg);
     }    
 }
 
@@ -482,6 +491,7 @@ section .about .desc {
     margin-top: 20vh;
     padding: 10px;
     min-height: 100vh;
+    opacity: 0;
 }
 
 section .about .desc p {
@@ -491,6 +501,7 @@ section .about .desc p {
 
 section .about .desc p span {
     color: goldenrod;
+    
 }
 
 section .about .desc ul li {
@@ -514,48 +525,76 @@ section .about .desc h3 {
 
 
 
-section .projects {
+section .projects,
+section .projects-2 {
     display: flex;
-    flex-direction: row;
-    justify-content: start;
     align-items: center;
+    width: auto;
+    overflow-x: hidden;
+    position: relative;
+}
+section .projects h1.h1{
+    position: absolute;
+    top: 0;
+    right: 50%;
+}
+section .projects .group-one{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 100vw;
     min-height: 50vh;
-    overflow: hidden;
+    margin-right: 15%;
+    animation: group 10s linear infinite;
+}
+section .projects .group-two{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 100vw;
+    min-height: 50vh;
+    animation: group 10s linear infinite;
 }
 
-section .projects .card {
+section .projects .card,
+section .projects-2 .card {
     display: flex;
     flex-direction: column;
     width: 280px;
     border-radius: 20px 20px 0 0;
-    margin-right: 15%;
     border-radius: 20px 20px 0 0;
-    animation: card 10s infinite;
-}
 
-section .projects .card img {
+}
+section .projects .card img,
+section .projects-2 .card img {
     border-radius: 20px 20px 0 0;
     opacity: 25;
     transition: all 1s;
 }
 
-section .projects:hover .card {
+section .projects:hover .group-one {
+    animation-play-state: paused;
+}
+section .projects:hover .group-two {
     animation-play-state: paused;
 }
 
-section .projects .card img {
+section .projects .card img,
+section .projects-2 .card img {
     border-radius: 20px 20px 0 0;
     opacity: .5;
     transition: all .3s linear;
 }
 
-section .projects .card img:hover {
+section .projects .card img:hover,
+section .projects-2 .card img:hover {
     margin-bottom: 10px;
     cursor: pointer;
     opacity: 1;
 }
 
-section .projects .card .desc {
+section .projects .card .desc,
+section .projects-2 .card .desc {
     display: flex;
     flex-direction: column;
     z-index: 2;
@@ -563,11 +602,13 @@ section .projects .card .desc {
     background: #2d2d2d;
 }
 
-section .projects .card .desc h1 {
+section .projects .card .desc h1,
+section .projects-2 .card .desc h1 {
     color: goldenrod;
 }
 
-section .projects .card .desc button {
+section .projects .card .desc button,
+section .projects-2 .card .desc button{
     position: relative;
     align-self: center;
     width: 220px;
@@ -577,7 +618,8 @@ section .projects .card .desc button {
     cursor: pointer;
 }
 
-section .projects .card .desc button::before {
+section .projects .card .desc button::before,
+section .projects-2 .card .desc button::before {
     position: absolute;
     content: " ";
     left: -100%;
@@ -587,8 +629,22 @@ section .projects .card .desc button::before {
     background: linear-gradient(-90deg, pink 50%, cyan);
 }
 
-section .projects .card .desc button:hover::before {
+section .projects .card .desc button:hover::before,
+section .projects-2 .card .desc button:hover::before {
     animation: glow 2s ease-out forwards;
+}
+
+section .projects-2 h1.h1{
+    position: absolute;
+    top: 0;
+    text-align: center;
+}
+section .projects-2 .group-one{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 100vw;
+    min-height: 50vh;
 }
 
 @keyframes glow {
@@ -597,32 +653,17 @@ section .projects .card .desc button:hover::before {
     }
 }
 
-section .projects .card .desc button a {
+section .projects .card .desc button a,
+section .projects-2 .card .desc button a {
     text-decoration: none;
     color: #000;
     font-size: 24px;
     z-index: 2;
 }
 
-@keyframes card {
-    0% {
-        transform: translate(0%);
-    }
-
-    25% {
-        transform: translate(-198%);
-    }
-
-    50% {
-        transform: translate(-398%);
-    }
-
-    75% {
-        transform: translate(-600%);
-    }
-
+@keyframes group {
     100% {
-        transform: translate(-806%);
+        transform: translate(-115%);
     }
 
 }
@@ -664,11 +705,11 @@ footer {
     border-radius: 30px 30px 0 0;
     box-shadow: -10px -10px 32px;
     padding: 10px;
-    transition: all .3s linear;
+    transition: all 1s linear;
 }
 
 footer:hover {
-    min-height: 30vh;
+    min-height: 25vh;
     box-shadow: -10px -10px 10px #fff;
     background: #80808069;
 }
@@ -887,30 +928,32 @@ footer .friends a:hover {
 
 
 
-@media (max-width:1023px){
-    section .projects {
+@media (max-width:1024px){
+    section .projects .group-one {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
-        min-height: 50vh;
+        min-height: 100vh;
     }
     
-    section .projects .card {
+    section .projects .card,
+    section .projects-2 .card {
         display: flex;
         flex-direction: column;
-        width: 40%;
+        width: 35%;
         margin:5%;
         animation: card none;
     }
-    section .projects .card:nth-child(5),
-    section .projects .card:nth-child(6),
-    section .projects .card:nth-child(7),
-    section .projects .card:nth-child(8){
+    section .projects .group-one{
+        animation: none;
+    }
+    section .projects .group-two{
         display: none;
     }
     
-    section .projects .card img {
+    section .projects .card img,
+    section .projects-2 .card img {
         width: 100%;
     }
 }
@@ -1046,23 +1089,22 @@ footer .friends a:hover {
     }
 
 
-    section .projects {
+    section .projects .group-one {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        min-height: 50vh;
     }
     
+    section .projects .card,
     section .projects .card {
         display: flex;
         flex-direction: column;
-        width: 90%;
-        margin: 5% 0;
-        animation: card none;
+        width: 60%;
     }
     
-    section .projects .card img {
+    section .projects .card img,
+    section .projects-2 .card img {
         width: 100%;
     }
 
@@ -1209,6 +1251,16 @@ footer .friends a:hover {
     footer .contact ul.ewttt li {
         margin: 0 10px !important;
     }
+    section .projects .card,
+    section .projects-2 .card {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+        width: 90%;
+    }
+    section .projects h1.h1{
+    section .projects-2 h1.h1{
+        font-size: 16px;
 }
 
 @media (max-width:375px) {
@@ -1302,6 +1354,8 @@ footer .friends a:hover {
         }
 
     }
+
+
 
     section .hire a {
         padding: 5px 5px !important;
