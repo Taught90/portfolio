@@ -20,8 +20,11 @@ const cloud6 = document.querySelector('.cloud-six');
 const sun = document.querySelector('.sun');
 
 
+const h1 =document.getElementsByTagName('.h1');
 const h3 =document.getElementsByTagName('h3');
 const h4 =document.getElementsByTagName('h4');
+const p =document.getElementsByTagName('p');
+let desc = document.querySelector('.desc');
 const span =document.getElementsByTagName('span');
 let intro2 = document.querySelector('.intro-two');
 const intro_li= document.querySelector('.li');
@@ -55,7 +58,8 @@ window.addEventListener('scroll', () =>{
     sun.style.marginLeft = value * 1.5 + 'px';
     sun.style.marginTop = value * .6 + 'px';
 
-
+    desc.style.opacity = value * .000002 + 1;
+    intro2.style.opacity = value * -.001 + 1;
     intro2.style.marginTop = value * 1.5 + 'px';
     intro2.style.scale =value * -.0005 + 1;
 
@@ -72,9 +76,6 @@ btn.addEventListener('click', () => {
         btn.style.color= 'goldenrod';
         body.style.color= '#2d2d2d';
         intro_li.style.background= '#fff';
-        h4.style.color = 'brown';
-        h3.style.color = 'brown';
-        span.style.color = 'red';
         intro_li.style.background= '#fff';
     }
     else{
@@ -91,3 +92,14 @@ btn.addEventListener('click', () => {
 
     }
 })
+let starttime = 0;
+let ellapsedtime = 0;
+
+starttime= Date.now()- ellapsedtime;
+console.log(starttime);
+intervalId(update,10);
+
+function update(){
+    moon.style.marginTop = value * .6 + 'px';
+    moon.style.marginLeft = value * .6 + 'px';
+}
