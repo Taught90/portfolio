@@ -920,7 +920,7 @@ footer .friends a:hover {
 
 
     footer .contact .all ul li {
-        margin: 0 50px !important;
+        margin: 0 50px ;
         font-size: 24px;
     }
 }
@@ -960,18 +960,18 @@ footer .friends a:hover {
 
 @media (max-width:905px) {
     footer .contact .all ul li {
-        margin: 0 45px !important;
+        margin: 0 45px ;
         font-size: 24px;
     }
 }
 
 @media (max-width:886px) {
     section .about .desc p {
-        font-size: 20px !important;
+        font-size: 20px ;
     }
 
     section .about .desc ul li {
-        font-size: 20px !important;
+        font-size: 20px ;
     }
 
     section .about .desc h4 {
@@ -979,18 +979,18 @@ footer .friends a:hover {
     }
 
     section .about .desc h3 {
-        font-size: 24px !important;
+        font-size: 24px ;
 
     }
 
 
     footer {
-        box-shadow: -5px -5px 30px !important;
+        box-shadow: -5px -5px 30px ;
 
     }
 
     footer:hover {
-        box-shadow: none !important;
+        box-shadow: none ;
     }
 
     footer .contact ul.ewttt li img {
@@ -998,7 +998,7 @@ footer .friends a:hover {
     }
 
     footer .contact .all ul li {
-        margin: 0 40px !important;
+        margin: 0 40px ;
         font-size: 20px;
     }
 }
@@ -1010,11 +1010,11 @@ footer .friends a:hover {
         min-height: 10vh;
     }
     section .about .desc p {
-        font-size: 14px !important;
+        font-size: 14px ;
     }
 
     section .about .desc ul li {
-        font-size: 14px !important;
+        font-size: 14px ;
     }
 
     section .about .desc h4 {
@@ -1022,7 +1022,7 @@ footer .friends a:hover {
     }
 
     section .about .desc h3 {
-        font-size: 20px !important;
+        font-size: 20px ;
     }
 
     section .hire {
@@ -1030,24 +1030,24 @@ footer .friends a:hover {
     }
 
     section .hire a {
-        padding: 5px 5px !important;
-        font-size: 20px !important;
-        margin: 0 20px !important;
+        padding: 5px 5px ;
+        font-size: 20px ;
+        margin: 0 20px ;
         width: 120px;
 
     }
 
 
     footer .contact h1 {
-        font-size: 60px !important;
+        font-size: 60px ;
     }
 
     footer .contact ul.ewttt li {
-        margin: 0 50px !important;
+        margin: 0 50px ;
     }
 
     footer .contact .all ul li {
-        margin: 0 30px !important;
+        margin: 0 30px ;
         font-size: 20px;
     }
 }
@@ -1110,7 +1110,7 @@ footer .friends a:hover {
 
 
     footer .contact .all ul li {
-        margin: 0 20px !important;
+        margin: 0 20px ;
         font-size: 20px;
     }
 }
@@ -1120,18 +1120,18 @@ footer .friends a:hover {
 
 @media (max-width:550px) {
     footer .contact ul.ewttt li {
-        margin: 0 40px !important;
+        margin: 0 40px ;
     }
 
     footer .contact .all ul li {
-        margin: 0 10px !important;
+        margin: 0 10px ;
         font-size: 20px;
     }
 }
 
 @media (max-width:500px) {
     footer .contact ul.ewttt li {
-        margin: 0 30px !important;
+        margin: 0 30px ;
     }
 }
 
@@ -1229,26 +1229,26 @@ footer .friends a:hover {
     }
 
     section .hire a {
-        padding: 5px 5px !important;
-        font-size: 20px !important;
-        margin: 0 20px !important;
+        padding: 5px 5px ;
+        font-size: 20px ;
+        margin: 0 20px ;
 
     }
 
 
     footer .contact h1 {
-        font-size: 40px !important;
+        font-size: 40px ;
     }
 
     footer .contact .all ul li {
-        margin: 0 10px !important;
+        margin: 0 10px ;
         font-size: 14px;
     }
 }
 
 @media (max-width:414px) {
     footer .contact ul.ewttt li {
-        margin: 0 10px !important;
+        margin: 0 10px ;
     }
     section .projects .card,
     section .projects-2 .card {
@@ -1359,15 +1359,15 @@ footer .friends a:hover {
 
 
     section .hire a {
-        padding: 5px 5px !important;
-        font-size: 14px !important;
-        margin: 0 10px !important;
+        padding: 5px 5px ;
+        font-size: 14px ;
+        margin: 0 10px ;
 
     }
 
 
     footer .contact .all ul li {
-        margin: 0 10px !important;
+        margin: 0 10px ;
         font-size: 10px;
     }
 }
