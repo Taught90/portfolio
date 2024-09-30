@@ -523,27 +523,32 @@ section .about .desc h3 {
 }
 
 
+section.projects{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    min-height: 60vh;
+}
 
 
 section .projects,
 section .projects-2 {
     display: flex;
     align-items: center;
-    width: auto;
     overflow-x: hidden;
     position: relative;
+    min-height: 50vh;
 }
-section .projects h1.h1{
-    position: absolute;
-    top: 0;
-    right: 50%;
+section.projects-2 h1.h1,
+section.projects h1.h1{
+text-align: center;
+margin-bottom: 10px;
 }
 section .projects .group-one{
     display: flex;
     align-items: center;
     justify-content: space-between;
     min-width: 100vw;
-    min-height: 50vh;
     margin-right: 15%;
     animation: group 10s linear infinite;
 }
@@ -552,7 +557,6 @@ section .projects .group-two{
     align-items: center;
     justify-content: space-between;
     min-width: 100vw;
-    min-height: 50vh;
     animation: group 10s linear infinite;
 }
 
@@ -634,11 +638,6 @@ section .projects-2 .card .desc button:hover::before {
     animation: glow 2s ease-out forwards;
 }
 
-section .projects-2 h1.h1{
-    position: absolute;
-    top: 0;
-    text-align: center;
-}
 section .projects-2 .group-one{
     display: flex;
     align-items: center;
@@ -1256,7 +1255,7 @@ footer .friends a:hover {
         display: flex;
         flex-direction: column;
         margin-top: 20px;
-        width: 90%;
+        width: 75%;
     }
     section .projects h1.h1{
     section .projects-2 h1.h1{
