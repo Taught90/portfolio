@@ -1097,7 +1097,7 @@ footer .friends a:hover {
     }
     
     section .projects .card,
-    section .projects .card {
+    section .projects-2 .card {
         display: flex;
         flex-direction: column;
         width: 60%;
@@ -1261,6 +1261,8 @@ footer .friends a:hover {
     section .projects h1.h1{
     section .projects-2 h1.h1{
         font-size: 16px;
+    }
+    }
 }
 
 @media (max-width:375px) {
@@ -1370,4 +1372,3 @@ footer .friends a:hover {
         font-size: 10px;
     }
 }
-
